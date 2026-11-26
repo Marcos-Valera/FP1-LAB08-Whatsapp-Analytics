@@ -1,0 +1,6 @@
+# Finales de línea LF en el repositorio y en las copias de trabajo
+* text=auto eol=lf
+
+# Binarios
+*.png binary
+*.jpg binary
