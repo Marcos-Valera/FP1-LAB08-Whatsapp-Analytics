@@ -69,8 +69,7 @@ def cuenta_mensajes_por_hora(mensajes: list[Mensaje]) -> dict[int, int]:
     Devuelve:
     dict[int, int]: Diccionario con el conteo de mensajes por hora.
     """    
-    # TODO: Ejercicio 3.2
-    pass
+    return Counter(mensaje.hora.hour for mensaje in mensajes)
     
 def cuenta_mensajes_por_dia_semana(mensajes: list[Mensaje]) -> dict[str, int]:
     """
