@@ -16,8 +16,11 @@ def calcula_rango_fechas(mensajes: list[Mensaje])-> tuple[date, date] | None:
     Devuelve:
     tuple[date, date] | None: Tupla con la fecha del primer y último mensaje, o None si la lista está vacía.
     """
-    # TODO: Ejercicio 1
-    pass
+    if len(mensajes) == 0:
+        return None
+    
+    return mensajes[0].fecha, mensajes[-1].fecha
+
 
 def filtra_mensajes_por_fechas(mensajes: list[Mensaje], fecha_inicio: date|None=None, fecha_fin: date|None=None) -> list[Mensaje]:
     """
