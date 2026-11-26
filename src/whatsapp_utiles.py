@@ -57,8 +57,7 @@ def cuenta_mensajes_por_usuario(mensajes: list[Mensaje]) -> dict[str, int]:
     Devuelve:
     dict[str, int]: Diccionario con el conteo de mensajes por usuario.
     """
-    # TODO: Ejercicio 3.1
-    pass
+    return Counter(mensaje.usuario for mensaje in mensajes)
 
 def cuenta_mensajes_por_hora(mensajes: list[Mensaje]) -> dict[int, int]:
     """

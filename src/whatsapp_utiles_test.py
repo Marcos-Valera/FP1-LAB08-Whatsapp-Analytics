@@ -142,7 +142,7 @@ def test_analiza_palabras_caracteristicas():
 if __name__ == "__main__":
     test_calcula_rango_fechas()
     test_filtra_mensajes_por_fechas()
-    #test_cuenta_mensajes_por_usuario()
+    test_cuenta_mensajes_por_usuario()
     #test_cuenta_mensajes_por_hora()
     #test_cuenta_mensajes_por_dia_semana()
     #test_calcula_longitud_media_por_usuario()
