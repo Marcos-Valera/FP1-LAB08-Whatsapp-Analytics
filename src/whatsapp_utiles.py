@@ -1,5 +1,5 @@
 from collections import namedtuple, Counter, defaultdict
-from datetime import date
+from datetime import date, time
 
 # Nombres de los días de la semana
 DIAS_SEMANA = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
@@ -94,8 +94,18 @@ def calcula_longitud_media_por_usuario(mensajes: list[Mensaje]) -> dict[str, flo
     Devuelve:
     dict[str, float]: Diccionario con la longitud media de los mensajes por usuario.
     """
-    # TODO: Ejercicio 4
-    pass
+    dict_mensajes = defaultdict(list)
+    dict_media = defaultdict(int)
+    for mensaje in mensajes:
+        dict_mensajes[mensaje.usuario].append(len(mensaje.texto))
+
+    for usuario, lista_mensajes in dict_mensajes.items():
+        suma = sum(lista_mensajes)
+        media = suma / len(lista_mensajes)
+            
+        dict_media[usuario] = media
+
+    return dict_media
 
 def detecta_dia_mas_activo(mensajes: list[Mensaje]) -> tuple[date, int]|None:
     """Devuelve una tupla (fecha, numero_mensajes) del día con más actividad.
@@ -106,8 +116,10 @@ def detecta_dia_mas_activo(mensajes: list[Mensaje]) -> tuple[date, int]|None:
     Devuelve:
     tuple[date, int]|None: Tupla con la fecha y el número de mensajes, o None si no hay mensajes.
     """
-    # TODO: Ejercicio 5
-    pass
+    if not mensajes:
+        return None
+    diccionario_contador = Counter(mensaje.fecha for mensaje in mensajes)
+    return diccionario_contador.most_common()[0]
 
 def analiza_palabras_caracteristicas(mensajes: list[Mensaje], usuario: str, n: int = 100) -> list[tuple[str, int]]:
     """
