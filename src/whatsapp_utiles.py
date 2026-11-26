@@ -135,5 +135,15 @@ def analiza_palabras_caracteristicas(mensajes: list[Mensaje], usuario: str, n: i
     Devuelve:
     list[tuple[str, int]]: Lista de n tuplas (palabra, recuento) ordenadas por recuento descendente.
     """
-    # TODO: Ejercicio 6
-    pass
+    dict_palabras = Counter()
+
+    for mensaje in mensajes:
+        palabras = mensaje.texto.lower().split()
+        for palabra in palabras:
+            if palabra.isalpha():
+                if mensaje.usuario == usuario:
+                    dict_palabras[palabra] += 1
+                else:
+                    dict_palabras[palabra] -= 1
+
+    return dict_palabras.most_common()[:n]
