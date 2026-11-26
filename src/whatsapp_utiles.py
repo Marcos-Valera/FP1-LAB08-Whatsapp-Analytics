@@ -82,8 +82,7 @@ def cuenta_mensajes_por_dia_semana(mensajes: list[Mensaje]) -> dict[str, int]:
     Devuelve:
     dict[str, int]: Diccionario con el conteo de mensajes por día de la semana.
     """
-    # TODO: Ejercicio 3.3
-    pass
+    return Counter(DIAS_SEMANA[mensaje.fecha.weekday()] for mensaje in mensajes)
 
 def calcula_longitud_media_por_usuario(mensajes: list[Mensaje]) -> dict[str, float]:
     """

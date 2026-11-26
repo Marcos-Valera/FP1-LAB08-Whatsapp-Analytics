@@ -144,7 +144,7 @@ if __name__ == "__main__":
     test_filtra_mensajes_por_fechas()
     test_cuenta_mensajes_por_usuario()
     test_cuenta_mensajes_por_hora()
-    #test_cuenta_mensajes_por_dia_semana()
+    test_cuenta_mensajes_por_dia_semana()
     #test_calcula_longitud_media_por_usuario()
     #test_detecta_dia_mas_activo()
     #test_analiza_palabras_caracteristicas()
