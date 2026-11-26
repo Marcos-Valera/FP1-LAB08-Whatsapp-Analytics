@@ -35,8 +35,17 @@ def filtra_mensajes_por_fechas(mensajes: list[Mensaje], fecha_inicio: date|None=
     Devuelve:
     list[Mensaje]: Lista de mensajes filtrados.
     """
-    # TODO: Ejercicio 2
-    pass
+    if fecha_inicio == None:
+        fecha_inicio = mensajes[0].fecha
+    if fecha_fin == None:
+        fecha_fin = mensajes[-1].fecha
+
+    mensajes_entre_fechas = []
+    for mensaje in mensajes:
+        if fecha_inicio <= mensaje.fecha and fecha_fin >= mensaje.fecha:
+            mensajes_entre_fechas.append(mensaje)
+
+    return mensajes_entre_fechas
 
 def cuenta_mensajes_por_usuario(mensajes: list[Mensaje]) -> dict[str, int]:
     """

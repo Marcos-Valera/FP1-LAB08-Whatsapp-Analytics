@@ -141,7 +141,7 @@ def test_analiza_palabras_caracteristicas():
 # por eso las llamadas van dentro de este bloque.
 if __name__ == "__main__":
     test_calcula_rango_fechas()
-    #test_filtra_mensajes_por_fechas()
+    test_filtra_mensajes_por_fechas()
     #test_cuenta_mensajes_por_usuario()
     #test_cuenta_mensajes_por_hora()
     #test_cuenta_mensajes_por_dia_semana()
